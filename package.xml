@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>jetbot_description</name>
+  <version>0.0.1</version>
+  <description>Jetbot URDF description</description>
+
+  <author email="issaiass@hotmail.com">Rangel Alvarado</author>
+
+  <maintainer email="issaiass@hotmail.com">Rangel Alvarado</maintainer>
+
+  <license>CCSA2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+ 
+  <build_depend>roslaunch</build_depend>
+
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+  </export>
+</package>

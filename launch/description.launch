@@ -1,0 +1,33 @@
+<!-- This file will bring up the robot description only     -->
+<!-- also you will enable/disable all sensors for the model -->
+<launch>
+  <!-- arguments for the realsense camera to load -->
+  <arg name="pointcloud_enable" default="true" />
+  <arg name="realsense_enable" default="true" /> 
+
+  <!-- arguments for lidar use -->
+  <arg name="lidar_enable" default="true" />
+  <arg name="visualize_laser" default="true" /> 
+
+  <!-- argument for imu use -->
+  <arg name="imu_enable" default="true" />  
+
+  <!-- argument for gps use -->
+  <arg name="gps_enable" default="true" />  
+
+  <!-- argument for ultrasonic use -->
+  <arg name="ultrasonic_enable" default="true" />
+
+  <!-- arguments for model, rviz and gui -->
+  <arg name="model" default="$(find jetbot_description)/urdf/jetbot.urdf.xacro
+                            pointcloud_enable:=$(arg pointcloud_enable) 
+                            realsense_enable:=$(arg realsense_enable)
+                            lidar_enable:=$(arg lidar_enable)
+                            visualize_laser:=$(arg visualize_laser)
+                            imu_enable:=$(arg imu_enable)
+                            gps_enable:=$(arg gps_enable)
+                            ultrasonic_enable:=$(arg ultrasonic_enable)" />
+
+  <!-- parses the urdf to the robot description in parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+</launch>
