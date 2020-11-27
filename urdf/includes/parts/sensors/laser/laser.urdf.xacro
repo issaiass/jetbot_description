@@ -4,8 +4,7 @@
   <xacro:include filename="$(find jetbot_description)/urdf/includes/gazebo/laser.gazebo.xacro"/>
 
   <!-- LASER (RPLidar) -->
-  <xacro:macro name="sensor_rplidar" params="name topic_ns:=rplidar parent *origin visualize_laser:=true">
-
+  <xacro:macro name="sensor_rplidar" params="name topic_ns:=rplidar parent *origin visualize_laser:=true">  
     <joint name="scan_joint" type="fixed">
       <parent link="${parent}"/>
       <child link="${name}_base_scan"/>
@@ -38,6 +37,6 @@
     </link>
 
     <!-- RPLidar Plugin -->
-    <xacro:gazebo_rplidar lidar_name="${name}" reference_link="${name}_base_scan" topic_ns="${topic_ns}" visualize_laser="${visualize_laser}" />
+    <xacro:gazebo_rplidar lidar_name="${name}" reference_link="${name}_base_scan" topic_ns="${topic_ns}" visualize_laser="${visualize_laser}" />    
   </xacro:macro>
 </robot>

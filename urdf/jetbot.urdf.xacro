@@ -51,7 +51,8 @@
 
   <!-- RPLIDAR LASER -->
   <xacro:if value="$(arg lidar_enable)" >
-    <xacro:sensor_rplidar name="rplidar" topic_ns="rplidar" parent="pcb_boards" visualize_laser="$(arg visualize_laser)" >
+    <xacro:sensor_rplidar name="rplidar" topic_ns="scan" parent="pcb_boards" visualize_laser="$(arg visualize_laser)" >
+    <!--xacro:sensor_rplidar name="rplidar" topic_ns="rplidar" parent="pcb_boards" visualize_laser="$(arg visualize_laser)" -->    
       <origin xyz="0 0 0.058" rpy="0 0 0" />
     </xacro:sensor_rplidar >
   </xacro:if>
