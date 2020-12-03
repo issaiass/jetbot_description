@@ -49,4 +49,15 @@
   </xacro:macro>  
   <!-- cylinder inertia -->
 
+  <!-- open cylinder inertia -->
+  <xacro:macro name="cylinder_inertia" params="mass r1 r2 h">
+    <inertial>  
+      <mass value="${mass}"/>    
+      <inertia  ixx="${mass*(3*(r1*r1 + r2*r2)+h*h)/12}" ixy = "0" ixz = "0"
+                iyy="${mass*(3*(r1*r1 + r2*r2)+h*h)/12}" iyz = "0"
+                izz="${mass*(r1*r1 + r2*r2)/2}" /> 
+    </inertial>              
+  </xacro:macro>  
+  <!-- open cylinder inertia -->
+
 </robot>
