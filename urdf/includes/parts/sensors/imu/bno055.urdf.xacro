@@ -15,15 +15,15 @@
   <xacro:include filename="$(find jetbot_description)/urdf/includes/gazebo/imu.gazebo.xacro" />
 
   <!-- IMU BNO055 -->
-  <xacro:macro name="sensor_imu" params="name topic_ns:=bno055 parent *origin">
+  <xacro:macro name="sensor_imu" params="name topic_ns:=imu parent *origin">
 
     <joint name="{name}_joint" type="fixed">
       <parent link="${parent}"/>
-      <child link="${name}_base"/>
+      <child link="${name}_link"/>
       <xacro:insert_block name="origin" />
     </joint>
 
-    <link name="${name}_base">
+    <link name="${name}_link">
       <visual>
         <origin xyz="-${bno_width/2} ${bno_height/2} 0" rpy="${pi/2} 0 0"/>
         <geometry>

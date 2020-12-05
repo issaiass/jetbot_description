@@ -59,14 +59,14 @@
 
   <!-- IMU -->
   <xacro:if value="$(arg imu_enable)" >
-    <xacro:sensor_imu name="bno055" topic_ns="bno_imu" parent="pcb_boards" >
+    <xacro:sensor_imu name="imu" topic_ns="imu" parent="pcb_boards" >
       <origin xyz="0 0 0.0275" rpy="0 0 0" />
     </xacro:sensor_imu>
   </xacro:if>
 
   <!-- GPS -->
   <xacro:if value="$(arg gps_enable)" >
-    <xacro:sensor_gps name="mtk3339" topic_ns="mtk_gps" parent="bno055_base" >
+    <xacro:sensor_gps name="mtk3339" topic_ns="mtk_gps" parent="imu_link" >
       <origin xyz="-0.044 0 0" rpy="0 0 0" />
     </xacro:sensor_gps>
   </xacro:if>

@@ -202,7 +202,7 @@
     <material>Gazebo/GreenTransparent</material>
   </gazebo>
 
-  <gazebo reference="bno055_base">
+  <gazebo reference="imu_link">
     <material>Gazebo/Yellow</material>
   </gazebo>
 
